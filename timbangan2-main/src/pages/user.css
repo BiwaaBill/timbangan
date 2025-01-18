@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+25+Charted&family=Rock+Salt&display=swap');
+
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightblue;
+    background-size: 400% 400%;
+    height: 100vh;
+    margin: 0;
+}
+
+.login .login-text{
+    font-family: "Rock Salt", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.login-card {
+    width: 30%;
+    z-index: 2;
+    height: max-content;
+    padding: 3%;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: slideInFromRight 0.8s ease-out forwards;
+}
+
+.login-header{
+    margin-top: -10px;
+    text-align: center;
+}
+
+.login-header h1{
+    font-size: 18px;
+    text-align: center;
+    color: #333;
+}
+
+.login-header p {
+    font-size: 12px;
+    color: lightblue;
+}
+
+.login-email,
+.login-password,
+.signup-email,
+.signup-username,
+.signup-password {
+    padding-bottom: 8%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.login input[type='text'],
+.login input[type='password'] {
+    margin-bottom: 15px;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid var(--color7);
+    font-size: 14px;
+    width: 100%;
+}
+
+.login input[type='text']:hover,
+.login input[type='password']:hover {
+    background-color: var(--color4);
+}
+
+.login input[type='text']::placeholder,
+.login input[type='password']::placeholder {
+    color: var(--color4);
+}
+
+.login button[type='submit'] {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--color1);
+    border: none;
+    color: var(--color8);
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+button[type='submit']:hover {
+    background-color: lightblue;
+}

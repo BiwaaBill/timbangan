@@ -21,8 +21,9 @@ const Login = () => {
         try {
             const response = await axios.post('http://localhost:3002/login', { email, password });
             if (response.data.success) {
+                localStorage.setItem("role", response.data.role); // Simpan role di localStorage 
                 // Menggunakan navigate untuk pindah ke halaman dashboard setelah login berhasil
-                navigate('/homepage');  // Ganti dengan rute yang sesuai
+                navigate('/homepage');
             } else {
                 setErrorMessage(response.data.message);
                 setTimeout(() => {

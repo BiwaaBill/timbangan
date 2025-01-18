@@ -43,18 +43,23 @@ function handleDisconnect() {
 }
 handleDisconnect();
 
-// API
-app.post('/login', (req, res) => {
-    const { email, password } = req.body;
-
-    const validEmail = 'user_timbangan@gmail.com';
-    const validPassword = 'timbangan12';
-
-    if (email === validEmail && password === validPassword) {
-        return res.json({ success: true });
-    } else {
-        return res.json({ success: false, message: 'Email atau password salah' });
-    }
+// Simulasi data user dengan role 
+const users = [ 
+    { email: 'admin_timbangan@gmail.com', password: 'admin123', role: 'admin' }, 
+    { email: 'operator_timbangan@gmail.com', password: 'operator123', role: 'operator' } 
+]; 
+ 
+// API Login 
+app.post('/login', (req, res) => { 
+    const { email, password } = req.body; 
+ 
+    const user = users.find(u => u.email === email && u.password === password); 
+ 
+    if (user) { 
+        return res.json({ success: true, role: user.role }); 
+    } else { 
+        return res.json({ success: false, message: 'Email atau password salah' }); 
+    } 
 });
 
 //-----------homepage-------------//
